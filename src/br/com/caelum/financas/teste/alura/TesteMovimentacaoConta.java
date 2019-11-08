@@ -20,7 +20,7 @@ public class TesteMovimentacaoConta {
 		em.getTransaction().begin();
 		
 		//realizará um select from
-		Movimentacao movimentacao = em.find(Movimentacao.class, 3);
+		Movimentacao movimentacao = em.find(Movimentacao.class, 2);
 
 		// Possuem relacionamento entre movimentação e conta
 		Conta conta = movimentacao.getConta();

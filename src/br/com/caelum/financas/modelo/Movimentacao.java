@@ -26,19 +26,21 @@ public class Movimentacao {
 	@ManyToOne
 	private Conta conta;
 
+	private String tipo;
+
 	@ManyToMany
-	private List<Categoria> categorias;
+	private List<Categoria> categoria;
 
 	public Integer getId() {
 		return id;
 	}
 
 	public List<Categoria> getCategorias() {
-		return categorias;
+		return categoria;
 	}
 
-	public void setCategorias(List<Categoria> categorias) {
-		this.categorias = categorias;
+	public void setCategorias(List<Categoria> categoria) {
+		this.categoria = categoria;
 	}
 
 	public void setId(Integer id) {
@@ -83,6 +85,15 @@ public class Movimentacao {
 
 	public void setConta(Conta conta) {
 		this.conta = conta;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoMovimentacao saida) {
+		this.tipo = tipo;
+
 	}
 
 }

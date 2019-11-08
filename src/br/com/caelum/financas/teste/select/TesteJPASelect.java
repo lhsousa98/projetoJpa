@@ -36,7 +36,7 @@ public class TesteJPASelect {
 
 		List<Conta> selecionarNome = em.createQuery(criteria).getResultList();
 
-		// em.persist(conta);
+		em.persist(conta);
 		em.getTransaction().commit();
 		em.close();
 
