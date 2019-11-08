@@ -12,38 +12,33 @@ import br.com.caelum.financas.util.JPAUtil;
 
 public class TesteJPASelect {
 	public static void main(String[] args) {
-		
+
 		Conta conta = new Conta();
-		
-		conta.setTitular("Luiz Henrique");
-		conta.setBanco("Santander");
-		conta.setAgencia("2554");
-		conta.setNumero("587264");
-		
+
 		EntityManager em = new JPAUtil().getEntityManager();
-		
+
 		em.getTransaction().begin();
-		
+
 		CriteriaBuilder builder = em.getCriteriaBuilder();
-		
-		//criando select
+
+		// criando select
 		CriteriaQuery<Conta> criteria = builder.createQuery(Conta.class);
-		
-		//Root é o from
+
+		// Root é o from
 		Root<Conta> root = criteria.from(Conta.class);
-		
-		//criteria select
+
+		// criteria select
 		criteria.select(root);
-		
-		//criteria where equal criar o root get
+
+		// criteria where equal criar o root get
 		criteria.where(builder.equal(root.get(conta.getTitular()), "Luiz Henrique"));
-		//criar um list com a createquery e o resultado da lista
-		
+		// criar um list com a createquery e o resultado da lista
+
 		List<Conta> selecionarNome = em.createQuery(criteria).getResultList();
-		
-		em.persist(conta);
+
+		// em.persist(conta);
 		em.getTransaction().commit();
 		em.close();
-	
+
 	}
 }

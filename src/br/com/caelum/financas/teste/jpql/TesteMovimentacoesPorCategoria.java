@@ -1,4 +1,4 @@
-package br.com.caelum.financas.teste.alura;
+package br.com.caelum.financas.teste.jpql;
 
 import br.com.caelum.financas.modelo.Categoria;
 import br.com.caelum.financas.modelo.Movimentacao;
@@ -24,6 +24,7 @@ public class TesteMovimentacoesPorCategoria {
                 .createQuery("select m from Movimentacao m join m.categoria c where c = :pCategoria");
 
         query.setParameter("pCategoria", categoria);
+        //query.setParameter("cCategoria", categoria);
 
         List<Movimentacao> movimentacoes = query.getResultList();
 
@@ -31,6 +32,8 @@ public class TesteMovimentacoesPorCategoria {
             System.out.println("\nDescricao ..: " + m.getDescricao());
             System.out.println("Valor ......: R$ " + m.getValor());
         }
+        
+        
 
     }
 }
