@@ -3,9 +3,7 @@ package br.com.caelum.financas.modelo;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by leonardocordeiro on 19/12/16.
- */
+
 @Entity
 public class Cliente {
 
