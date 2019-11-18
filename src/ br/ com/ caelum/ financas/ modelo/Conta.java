@@ -4,9 +4,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-/**
- * Created by leonardocordeiro on 24/02/17.
- */
+
 
 @Entity
 public class Conta {
@@ -27,7 +25,7 @@ public class Conta {
 	@JoinColumn(unique = true)
 	private Cliente cliente;
 	
-	//Ele cria um espelho da minha conta, é a bidirecional que foi declarada em movimentacao é um espelhamento
+	//Ele cria um espelho da minha conta, Ã© a bidirecional que foi declarada em movimentacao Ã© um espelhamento
 	@OneToMany(mappedBy="conta")
 	private List<Movimentacao> movimentacoes;
 
